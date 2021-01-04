@@ -90,14 +90,18 @@ uint8_t takeOpenLockerActions()
 	uint8_t key = '$';
 	while (key == '$')	key = keypad_read();
 	
-	/* (=) Sign on keypad maps to "Change Password" */
+	/* 'P' (=) Sign on keypad maps to "Change Password" */
 	if (key == 15)
 	{
 		buzzer_3_sec();
 		changePassword();
 		key = '$';
-		/* Press (=) again to confirm inserting password */
+		/* Press 'P' (=) again to confirm inserting password */
 		while (key != 15)	key = keypad_read();
+		
+		key = '$';
+		/* Press 'C' (ON/C) to close locker */
+		while (key != 14)	key = keypad_read();
 		/* Locker is now closed */
 		return 1;
 	}
