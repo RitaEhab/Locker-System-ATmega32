@@ -12,8 +12,8 @@
 #include "std_macros.h"
 
 #define BUZZER_PORT_INIT()		SETBIT(DDRA, 0);
-#define BUZZER_ON()				SETBIT(PORTA, 0);
-#define BUZZER_OFF()			CLRBIT(PORTA, 0);	
+#define BUZZER_ON()				    SETBIT(PORTA, 0);
+#define BUZZER_OFF()			    CLRBIT(PORTA, 0);	
 
 /*
  * Function: initialize buzzer
